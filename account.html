@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Account | BeliLah</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/features.css">
+</head>
+<body>
+    <div id="toast" class="toast"></div>
+    
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="nav-logo"><a href="index.html">BeliLah</a></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="wishlist.html" class="icon-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 18C10 18 2 12 2 6.5C2 4.5 3.5 3 5.5 3C7 3 8.5 4 10 5.5C11.5 4 13 3 14.5 3C16.5 3 18 4.5 18 6.5C18 12 10 18 10 18Z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span class="wishlist-count">0</span>
+                </a>
+                <a href="cart.html" class="icon-btn cart-btn">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1H3L3.4 3M5 11H15L19 3H3.4M5 11L3.4 3M5 11L3 15H17M9 18C9 18.5523 8.55228 19 8 19C7.44772 19 7 18.5523 7 18C7 17.4477 7.44772 17 8 17C8.55228 17 9 17.4477 9 18ZM17 18C17 18.5523 16.5523 19 16 19C15.4477 19 15 18.5523 15 18C15 17.4477 15.4477 17 16 17C16.5523 17 17 17.4477 17 18Z" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <div class="user-menu">
+                    <div class="user-menu-toggle">
+                        <div class="user-avatar">A</div>
+                        <span class="user-name">Account</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <a href="account.html" class="user-dropdown-item">
+                            <span>👤</span> My Account
+                        </a>
+                        <a href="orders.html" class="user-dropdown-item">
+                            <span>📦</span> My Orders
+                        </a>
+                        <a href="wishlist.html" class="user-dropdown-item">
+                            <span>❤️</span> Wishlist
+                        </a>
+                        <div class="user-dropdown-divider"></div>
+                        <div class="user-dropdown-item" onclick="window.authManager.logout()">
+                            <span>🚪</span> Logout
+                        </div>
+                    </div>
+                </div>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-header">
+        <h1>My Account</h1>
+        <p>Manage your profile and preferences</p>
+    </section>
+
+    <div class="breadcrumb container">
+        <a href="index.html">Home</a> <span>/</span> <span>Account</span>
+    </div>
+
+    <section class="checkout-page">
+        <div class="container">
+            <div class="checkout-layout" style="grid-template-columns: 250px 1fr;">
+                <!-- Sidebar -->
+                <div style="background: var(--bg-secondary); border-radius: 16px; padding: 24px; height: fit-content;">
+                    <div style="text-align: center; margin-bottom: 24px;">
+                        <div class="user-avatar" style="width: 80px; height: 80px; font-size: 32px; margin: 0 auto 16px;">
+                            <span id="userInitial">A</span>
+                        </div>
+                        <h3 style="font-size: 20px; margin-bottom: 4px;" id="userName">User Name</h3>
+                        <p style="font-size: 14px; color: var(--text-secondary);" id="userEmail">email@example.com</p>
+                    </div>
+                    <div class="user-dropdown-divider"></div>
+                    <a href="account.html" class="user-dropdown-item" style="margin-top: 12px; background: white;">
+                        <span>👤</span> Profile
+                    </a>
+                    <a href="orders.html" class="user-dropdown-item">
+                        <span>📦</span> Orders
+                    </a>
+                    <a href="wishlist.html" class="user-dropdown-item">
+                        <span>❤️</span> Wishlist
+                    </a>
+                </div>
+
+                <!-- Main Content -->
+                <div>
+                    <div class="checkout-form">
+                        <h2 style="margin-bottom: 24px;">Profile Information</h2>
+                        <form id="profileForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>First Name *</label>
+                                    <input type="text" name="firstName" required id="firstName">
+                                </div>
+                                <div class="form-group">
+                                    <label>Last Name *</label>
+                                    <input type="text" name="lastName" required id="lastName">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address *</label>
+                                <input type="email" name="email" required disabled id="email" style="background: var(--bg-secondary);">
+                                <span style="font-size: 12px; color: var(--text-secondary);">Email cannot be changed</span>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" name="phone" id="phone">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </form>
+                    </div>
+
+                    <div class="checkout-form" style="margin-top: 24px;">
+                        <h2 style="margin-bottom: 24px;">Account Statistics</h2>
+                        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;">
+                            <div style="background: var(--bg-secondary); padding: 20px; border-radius: 12px; text-align: center;">
+                                <div style="font-size: 32px; font-weight: 700; color: var(--primary-color);" id="totalOrders">0</div>
+                                <div style="font-size: 14px; color: var(--text-secondary);">Total Orders</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); padding: 20px; border-radius: 12px; text-align: center;">
+                                <div style="font-size: 32px; font-weight: 700; color: var(--primary-color);" id="totalSpent">RM 0</div>
+                                <div style="font-size: 14px; color: var(--text-secondary);">Total Spent</div>
+                            </div>
+                            <div style="background: var(--bg-secondary); padding: 20px; border-radius: 12px; text-align: center;">
+                                <div style="font-size: 32px; font-weight: 700; color: var(--primary-color);" id="wishlistItems">0</div>
+                                <div style="font-size: 14px; color: var(--text-secondary);">Wishlist Items</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="checkout-form" style="margin-top: 24px;">
+                        <h2 style="margin-bottom: 24px;">Account Settings</h2>
+                        <form id="settingsForm">
+                            <label style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-secondary); border-radius: 8px; margin-bottom: 12px;">
+                                <input type="checkbox" name="newsletter" id="newsletter">
+                                <div>
+                                    <div style="font-weight: 600;">Email Newsletter</div>
+                                    <div style="font-size: 12px; color: var(--text-secondary);">Receive updates about deals and promotions</div>
+                                </div>
+                            </label>
+                            <label style="display: flex; align-items: center; gap: 12px; padding: 12px; background: var(--bg-secondary); border-radius: 8px;">
+                                <input type="checkbox" name="notifications" id="notifications">
+                                <div>
+                                    <div style="font-weight: 600;">Order Notifications</div>
+                                    <div style="font-size: 12px; color: var(--text-secondary);">Get notified about order status updates</div>
+                                </div>
+                            </label>
+                            <button type="submit" class="btn btn-primary" style="margin-top: 16px;">Save Settings</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 BeliLah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart-manager.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/auth-manager.js"></script>
+    <script src="js/wishlist-manager.js"></script>
+    <script src="js/coupon-manager.js"></script>
+    <script src="js/review-manager.js"></script>
+    <script src="js/ui-components.js"></script>
+    
+    <script>
+    // Check if logged in
+    if (!window.authManager.isLoggedIn()) {
+        window.location.href = 'index.html';
+    }
+
+    const user = window.authManager.getUserInfo();
+
+    // Populate form
+    document.getElementById('firstName').value = user.firstName;
+    document.getElementById('lastName').value = user.lastName;
+    document.getElementById('email').value = user.email;
+    document.getElementById('phone').value = user.phone || '';
+    document.getElementById('newsletter').checked = user.settings?.newsletter || false;
+    document.getElementById('notifications').checked = user.settings?.notifications !== false;
+
+    // Display user info
+    document.getElementById('userName').textContent = `${user.firstName} ${user.lastName}`;
+    document.getElementById('userEmail').textContent = user.email;
+    document.getElementById('userInitial').textContent = user.firstName.charAt(0).toUpperCase();
+
+    // Display statistics
+    document.getElementById('totalOrders').textContent = user.orders?.length || 0;
+    const totalSpent = user.orders?.reduce((sum, order) => sum + order.total, 0) || 0;
+    document.getElementById('totalSpent').textContent = formatCurrency(totalSpent);
+    document.getElementById('wishlistItems').textContent = user.wishlist?.length || 0;
+
+    // Profile form submit
+    document.getElementById('profileForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        
+        const updates = {
+            firstName: formData.get('firstName'),
+            lastName: formData.get('lastName'),
+            phone: formData.get('phone')
+        };
+
+        window.authManager.updateProfile(updates);
+        window.cartManager.showToast('Profile updated successfully!', 'success');
+        setTimeout(() => window.location.reload(), 1000);
+    });
+
+    // Settings form submit
+    document.getElementById('settingsForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        
+        const settings = {
+            newsletter: formData.get('newsletter') === 'on',
+            notifications: formData.get('notifications') === 'on'
+        };
+
+        window.authManager.updateProfile({ settings });
+        window.cartManager.showToast('Settings updated successfully!', 'success');
+    });
+    </script>
+</body>
+</html>
