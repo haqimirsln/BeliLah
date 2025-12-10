@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="BeliLah - Beli smart, hidup senang. Premium online shopping destination for electronics, fashion, and more.">
+    <title>BeliLah - Beli Smart, Hidup Senang | Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">Added to cart!</div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">BeliLah</a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="index.html#promo" class="nav-link">Deals</a></li>
+                <li><a href="index.html#trust" class="nav-link">About</a></li>
+                <li><a href="index.html#footer" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="products.html" class="icon-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="2" />
+                        <path d="M14 14L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </a>
+                <a href="cart.html" class="icon-btn cart-btn" aria-label="Shopping Cart">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M1 1H3L3.4 3M5 11H15L19 3H3.4M5 11L3.4 3M5 11L3 15H17M9 18C9 18.5523 8.55228 19 8 19C7.44772 19 7 18.5523 7 18C7 17.4477 7.44772 17 8 17C8.55228 17 9 17.4477 9 18ZM17 18C17 18.5523 16.5523 19 16 19C15.4477 19 15 18.5523 15 18C15 17.4477 15.4477 17 16 17C16.5523 17 17 17.4477 17 18Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </a>
+                <button class="hamburger" id="hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Beli Smart,<br>Hidup Senang.</h1>
+            <p class="hero-subtitle">Experience premium online shopping with curated products, unbeatable deals, and
+                seamless service.</p>
+            <div class="hero-buttons">
+                <a href="products.html" class="btn btn-primary">Shop Now</a>
+                <a href="#trust" class="btn btn-secondary">Learn More</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <div class="hero-image-placeholder">
+                <img src="CMSLOGO.png" alt="CMS Logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2 class="section-title">Shop by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card animate-on-scroll">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="2" y="3" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M8 21H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M12 17V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Electronics</h3>
+                    <p class="category-description">Latest tech, smartphones, and smart devices</p>
+                </div>
+                <div class="category-card animate-on-scroll">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path d="M12 14C8.13401 14 5 17.134 5 21H19C19 17.134 15.866 14 12 14Z"
+                                stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Fashion</h3>
+                    <p class="category-description">Trending styles for every occasion</p>
+                </div>
+                <div class="category-card animate-on-scroll">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3 9L12 2L21 9V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V9Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path d="M9 21V12H15V21" stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Home & Living</h3>
+                    <p class="category-description">Transform your living spaces</p>
+                </div>
+                <div class="category-card animate-on-scroll">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="5" y="2" width="14" height="20" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M12 18H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Gadgets</h3>
+                    <p class="category-description">Innovative tools for modern living</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="products-grid" id="productsGrid"></div>
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="products.html" class="btn btn-primary">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Section -->
+    <section class="promo" id="promo">
+        <div class="promo-content">
+            <h2 class="promo-title">BeliLah Exclusive Deals</h2>
+            <p class="promo-text">Get free shipping on orders above RM100. Limited time offer on selected items!</p>
+            <a href="products.html" class="btn btn-primary">View Deals</a>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust" id="trust">
+        <div class="container">
+            <h2 class="section-title">Why Choose BeliLah</h2>
+            <div class="trust-grid">
+                <div class="trust-card animate-on-scroll">
+                    <div class="trust-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">Fast Delivery</h3>
+                    <p class="trust-description">Get your orders delivered within 24-48 hours nationwide</p>
+                </div>
+                <div class="trust-card animate-on-scroll">
+                    <div class="trust-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="8" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2" />
+                            <path d="M3 11H21" stroke="currentColor" stroke-width="2" />
+                            <path d="M7 15H7.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">Secure Payment</h3>
+                    <p class="trust-description">Shop with confidence using our encrypted payment system</p>
+                </div>
+                <div class="trust-card animate-on-scroll">
+                    <div class="trust-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" />
+                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <h3 class="trust-title">24/7 Support</h3>
+                    <p class="trust-description">Our customer service team is always here to help you</p>
+                </div>
+            </div>
+            <div class="testimonials">
+                <h3 class="testimonials-title">What Our Customers Say</h3>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card animate-on-scroll">
+                        <p class="testimonial-text">"BeliLah has completely changed how I shop online. Fast delivery and
+                            amazing quality products!"</p>
+                        <p class="testimonial-author">— Sarah Ahmad</p>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                        <p class="testimonial-text">"The best online shopping experience I've had. Great deals and
+                            excellent customer service."</p>
+                        <p class="testimonial-author">— David Chen</p>
+                    </div>
+                    <div class="testimonial-card animate-on-scroll">
+                        <p class="testimonial-text">"I love the curated selection and the seamless checkout process.
+                            Highly recommended!"</p>
+                        <p class="testimonial-author">— Nurul Ibrahim</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h4 class="footer-title">About BeliLah</h4>
+                    <p class="footer-text">Your trusted online shopping destination for premium products at unbeatable
+                        prices.</p>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="index.html#promo">Deals</a></li>
+                        <li><a href="index.html#trust">About Us</a></li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#footer">FAQ</a></li>
+                        <li><a href="#footer">Shipping Info</a></li>
+                        <li><a href="#footer">Returns</a></li>
+                        <li><a href="#footer">Privacy Policy</a></li>
+                        <li><a href="#footer">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4 class="footer-title">Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="white"
+                                    stroke-width="2" />
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 BeliLah. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/products.js"></script>
+    <script src="js/cart-manager.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>

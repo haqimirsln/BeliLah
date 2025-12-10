@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmed | BeliLah</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav class="nav-container">
+            <div class="nav-logo"><a href="index.html">BeliLah</a></div>
+        </nav>
+    </header>
+
+    <section class="confirmation-page">
+        <div class="confirmation-box">
+            <div class="success-icon">✓</div>
+            <h1>Order Confirmed!</h1>
+            <p>Thank you for your purchase. Your order has been successfully placed.</p>
+            <div class="order-number" id="orderNumber"></div>
+            <p>We've sent a confirmation email with order details.</p>
+            <div class="confirmation-actions">
+                <a href="products.html" class="btn btn-primary">Continue Shopping</a>
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </div>
+        
+        <div class="order-details-box">
+            <h2>Order Details</h2>
+            <div class="detail-row">
+                <span>Order Date:</span>
+                <span id="orderDate"></span>
+            </div>
+            <div class="detail-row">
+                <span>Total Amount:</span>
+                <span id="orderTotal"></span>
+            </div>
+            <div class="detail-row">
+                <span>Estimated Delivery:</span>
+                <span>2-3 business days</span>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/utils.js"></script>
+    <script src="js/confirmation.js"></script>
+</body>
+</html>
